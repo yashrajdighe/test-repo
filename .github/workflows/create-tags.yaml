@@ -1,0 +1,22 @@
+name: "Create Tags"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - edited
+      - synchronize
+      - opened
+
+jobs:
+  bump-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Create Tag on Merge to main"
+        uses: yashrajdighe/gh-actions/create-tags@add-create-tags-action
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
