@@ -9,6 +9,8 @@ on:
       - main
     types:
       - edited
+      - synchronize
+      - opened
 
 jobs:
   bump-tags:
